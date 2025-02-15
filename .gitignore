@@ -1,0 +1,6 @@
+/Blog.API/.vs/*
+/Blog.API/WebAPI/bin/*
+/Blog.API/WebAPI/obj/*
+/Blog.APP/.angular/*
+/Blog.APP/.vscode/*
+/Blog.APP/node_modules/*

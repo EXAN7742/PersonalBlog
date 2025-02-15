@@ -1,0 +1,23 @@
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input formControlName="name" id="name" required>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea formControlName="description" id="description"></textarea>
+    </div>
+    <div formArrayName="ingredients">
+      <div *ngFor="let ingredient of ingredients.controls; let i=index">
+        <div [formGroupName]="i">
+          <label for="name">Ingredient Name:</label>
+          <input formControlName="name" id="name">
+          <label for="quantity">Quantity:</label>
+          <input formControlName="quantity" id="quantity">
+          <button (click)="removeIngredient(i)">Remove Ingredient</button>
+        </div>
+      </div>
+      <button (click)="addIngredient()">Add Ingredient</button>
+    </div>
+    <button type="submit">Submit Recipe</button>
+  </form>
